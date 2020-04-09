@@ -1,5 +1,6 @@
 import random
-from project.ko import input_number
+import login
+from inn import input_number
 class RolledOneException(Exception):
     pass
 class Die:
@@ -206,3 +207,13 @@ class GameManager:
             self.box.reset()
             return False
 
+def main():
+    human_players = input_number('How many human players? ')
+    computer_players = input_number('How many computer players? ')
+
+    game_manager = GameManager(human_players, computer_players)
+    game_manager.play_game()
+
+
+if __name__ == '__main__':
+    main()
